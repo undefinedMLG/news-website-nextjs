@@ -6,6 +6,7 @@ import { MdOutlineBookmarkAdd } from "react-icons/md";
 import { GoKebabHorizontal } from "react-icons/go";
 import { FiMinusCircle } from "react-icons/fi";
 import Link from "next/link";
+import SideBar from "@/components/Sidebar/SideBar";
 
 export default function Page({ params }) {
   const ID = params.detail;
@@ -23,9 +24,9 @@ export default function Page({ params }) {
 
   return (
     <>
-      <div className=" mt-12 ml-3 lg:mt-12 lg:ml-24 flex flex-col lg:flex-row">
-        <div>
-          <div className="flex flex-col md:mr-20 lg:w-6/12 md:flex-row md:justify-between">
+      <div className=" mt-12 ml-3 lg:ml-24 md:mt-0 md:ml-0 flex flex-col lg:flex-row">
+        <div className="mt-24">
+          <div className="flex flex-col md:mr-3 lg:mr-20 lg:w-9/12 md:flex-row md:justify-between">
             <div className="flex">
               <div>
                 <Image
@@ -70,7 +71,7 @@ export default function Page({ params }) {
               </div>
             </div>
           </div>
-          <div className="mt-10 mr-3 lg:w-6/12">
+          <div className="mt-10 mr-3 lg:w-9/12">
             <div>
               <h1 className="text-3xl font-bold">UI/UX Trend in 2023</h1>
             </div>
@@ -142,10 +143,10 @@ export default function Page({ params }) {
           </div>
 
           {/* rekomen news */}
-          <div className=" lg:w-6/12 mt-16">
+          <div className=" lg:w-9/12 mt-16">
             {/* card */}
             <div className="mt-5">
-              <div className="flex mt:mt-0">
+              <div className="flex md:mt-0">
                 <Image
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9wPQWJOJu8CP11fYLGvdxz5zfJV4kBVsL8Q&usqp=CAU"
                   width={50}
@@ -164,7 +165,7 @@ export default function Page({ params }) {
                   </h1>
                   <p className="mt-3 ">{sentence.slice(0, 100) + "..."}</p>
                 </div>
-                <div className="md:mt-0 md:mr-10 lg:mt-3   ">
+                <div className="md:mt-5 md:ml-3 md:mr-3 lg:mt-0 lg:ml-3  ">
                   <Image
                     src="https://miro.medium.com/v2/resize:fit:1200/1*oV6DFQ6jHkcmz5g48-b4tw.png"
                     width={400}
@@ -175,7 +176,7 @@ export default function Page({ params }) {
                 </div>
               </div>
               <div className="flex flex-col-reverse md:gap-8 md:flex-row">
-                <div className="flex mt-5 md:mt-0">
+                <div className="flex mt-5 md:mt-5">
                   <p className="bg-gray-200 pl-3 pr-3 pt-2 pb-2 rounded-full text-xs">
                     Progamming
                   </p>
@@ -187,7 +188,7 @@ export default function Page({ params }) {
                     Selected for you
                   </p>
                 </div>
-                <div className="flex gap-5 mt-5 md:mt-2.5">
+                <div className="flex gap-5 mt-5 md:mt-7">
                   <Link href="https://www.instagram.com/reyhanmd._">
                     <MdOutlineBookmarkAdd />
                   </Link>
@@ -199,11 +200,11 @@ export default function Page({ params }) {
                   </Link>
                 </div>
               </div>
-              <hr className="border-t border-gray-600 mt-5 mr-3 md:mr-0" />
+              <hr className="border-t border-gray-600 mt-5 mr-3 md:mr-3" />
             </div>
           </div>
 
-          <div className="text-center lg:w-6/12 mt-5 mb-8">
+          <div className="text-center lg:w-9/12 mt-5 mb-8">
             <Link
               className="bg-[#F24F09] pl-5 pr-5 pt-2 pb-2 rounded-full text-white font-semibold"
               href="/explore"
@@ -214,8 +215,8 @@ export default function Page({ params }) {
         </div>
 
         {/* sidebar */}
-        <div>
-          <p>sidebar</p>
+        <div className="md:m-auto">
+          <SideBar/>
         </div>
       </div>
     </>

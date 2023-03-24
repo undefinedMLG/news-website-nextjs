@@ -31,7 +31,7 @@ export default function Follow() {
         Who to follow
       </h1>
       {data.slice(0, 3).map((Follow, index) => (
-        <div className="flex w-full justify-between mb-6 items-end">
+        <div className="flex w-full justify-between mb-6 items-end" key={index}>
           <div className="flex  gap-3">
             <img
               src={Follow.imagehuman}

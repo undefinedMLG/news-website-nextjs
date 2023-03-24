@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
       className={`${gts.variable} ${poppins.variable} ${ssp.variable}`}
     >
       <body>
-        {" "}
+        
         <Navbar />
         {children}
       </body>
