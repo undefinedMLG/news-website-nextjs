@@ -31,8 +31,8 @@ export default function Trussted() {
         Trussted Intuition
       </h1>
       {data.slice(0, 3).map((news, index) => (
-        <div className="relative flex flex-col mb-6 max-w-sm  hover:bg-gray-100">
-          <Link key={index} href={`/${news.id}`}>
+        <div className="relative flex flex-col mb-6 max-w-sm  hover:bg-gray-100" key={index}>
+          <Link  href={`/${news.id}`}>
             <div className="flex gap-2 mb-1">
               <div className="rounded-full object-cover h-8 w-8  ">
                 <img
