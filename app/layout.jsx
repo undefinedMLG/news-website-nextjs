@@ -41,13 +41,15 @@ const gts = localFont({
 
 export default function RootLayout({ children }) {
   return (
-
     <html
       lang="en"
       className={`${gts.variable} ${poppins.variable} ${ssp.variable}`}
     >
-      <Navbar/>
-      <body>{children}</body>
+      <body>
+        {" "}
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
