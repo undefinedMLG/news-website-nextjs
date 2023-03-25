@@ -62,9 +62,9 @@ export default function Trussted() {
                 <span className="capitalize text-gray-500 font-normal">
                   {news.date}
                 </span>
-              </h1>
+              </h1> 
             </div>
-            <h1 className=" text-black font-semibold font-[poppins] text-xl truncate max-w-xs">
+            <h1 className=" text-black font-semibold font-[poppins] text-base truncate max-w-xs">
               {news.headline}
             </h1>
           </Link>
@@ -97,7 +97,7 @@ export default function Trussted() {
         }}
       >
         <div className="flex justify-between w-full text-black">
-          <h1>    Trussted Intuition</h1>
+          <h1> Trussted Intuition</h1>
           <button className=" text-2xl mb-6 text-red-500" onClick={closeModal}>
             <IoMdClose />
           </button>

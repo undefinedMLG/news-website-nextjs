@@ -11,8 +11,8 @@ function CarousellNews() {
         <h1 className="text-xl font-[poppins] font-medium">Main News </h1>
       </div>
 
-      <div className=" grid grid-cols-4 gap-4">
-        <div className="CrdNws bg-gray-100 h-[342px] w-[254px] ">
+      <div className=" grid grid-cols-4 gap-5">
+        <div className="CrdNws bg-gray-100 h-[350px] w-full ">
           <img
             src="/image/coba.jpg"
             alt=""
@@ -32,17 +32,18 @@ function CarousellNews() {
               </p>
             </div>
           </div>
-          <h1 className="mt-5 px-3">Lorem ipsum dolor sit amet consectetur.</h1>
-          <div className="flex justify-evenly text-sm mt-7 px-3">
+          <h1 className="mt-5 h-12 overflow-clip font-[poppins] font-semibold px-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            vel, assumenda esse repellendus numquam aliquam totam nobis modi
+            obcaecati consequuntur.
+          </h1>
+          <div className="flex gap-4  text-sm mt-7 px-3">
             <h1 className="category bg-gray-200 px-2 pb-1 rounded-full">
               progamming
             </h1>
             <p className="text-gray-500 ">28 min read</p>
           </div>
         </div>
-        <div className="CrdNws bg-gray-100 h-[342px] w-full"></div>
-        <div className="CrdNws bg-gray-100 h-[342px] w-full"></div>
-        <div className="CrdNws bg-gray-100 h-[342px] w-full"></div>
       </div>
     </div>
   );
