@@ -4,27 +4,65 @@ import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { BsShareFill } from "react-icons/bs";
 import { MdOutlineBookmarkAdd } from "react-icons/md";
 import { GoKebabHorizontal } from "react-icons/go";
-import { FiMinusCircle } from "react-icons/fi";
 import Link from "next/link";
 import SideBar from "@/components/Sidebar/SideBar";
+import Card from "@/components/Card";
 
 export default function Page({ params }) {
   const ID = params.detail;
-  //   const sentence = "UI/UX Trend in 2023";
-  //   const words = sentence.split(" ");
-  //   <div className="flex">
-  //   {words.map((word,index) => (
-  //     <div key={index} className="bg-gray-200 pl-3 pr-3 pt-2 pb-2 rounded-full">
-  //       <span key={word}>{word} </span>
-  //     </div>
-  //   ))}
-  // </div>
-  const sentence =
-    "Neumorphism combines flat design and old classic skeuomorphism (Interface objects that mimic their real-world counterparts in appearance e.g. recycle bin icon used for discarding files).Neumorphism helped revive skeuomorphism as it laid the foundation of interface design along with flat design emphasizing minimalism.It’s a visual style that combines background colors, shapes, gradients, and shadows to ensure UI elements’ graphic intensity and a flat design. This allows for achieving a soft, extruded plastic look and almost 3D styling.";
+
+  const exampleData = [
+    {
+      _id: "641d65873089731c67977c99",
+      title: "UI/UX Design",
+      author: [
+        {
+          name: "Prayoga Adi",
+          desc: "Lorem ipsum dolor",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9wPQWJOJu8CP11fYLGvdxz5zfJV4kBVsL8Q&usqp=CAU",
+          verified: true,
+          _id: "641d65873089731c67977c9a",
+        },
+      ],
+      category: "Design",
+      image: "https://miro.medium.com/v2/resize:fit:1200/1*oV6DFQ6jHkcmz5g48-b4tw.png",
+      content:
+        "Neumorphism combines flat design and old classic skeuomorphism (Interface objects that mimic their real-world counterparts in appearance e.g. recycle bin icon used for discarding files).Neumorphism helped revive skeuomorphism as it laid the foundation of interface design along with flat design emphasizing minimalism.It’s a visual style that combines background colors, shapes, gradients, and shadows to ensure UI elements’ graphic intensity and a flat design. This allows for achieving a soft, extruded plastic look and almost 3D styling.",
+      time: "7",
+      tags: "The Way easy for javascript",
+      date: "Mar 11, 2022",
+      createdAt: "2023-03-24T08:55:35.019Z",
+      updatedAt: "2023-03-24T08:55:35.019Z",
+      __v: 0,
+    },
+    {
+      _id: "641e6942374c0eef21464627",
+      title: "15 extension VS Code thats make your code easier",
+      author: [
+        {
+          name: "Reyhan Marsalino",
+          desc: "Lorem ipsum dolor blablabla",
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9wPQWJOJu8CP11fYLGvdxz5zfJV4kBVsL8Q&usqp=CAU",
+          verified: true,
+          _id: "641e6942374c0eef21464628",
+        },
+      ],
+      category: "Programming",
+      image: "https://miro.medium.com/v2/resize:fit:1200/1*oV6DFQ6jHkcmz5g48-b4tw.png",
+      content:
+        "Neumorphism combines flat design and old classic skeuomorphism (Interface objects that mimic their real-world counterparts in appearance e.g. recycle bin icon used for discarding files).Neumorphism helped revive skeuomorphism as it laid the foundation of interface design along with flat design emphasizing minimalism.It’s a visual style that combines background colors, shapes, gradients, and shadows to ensure UI elements’ graphic intensity and a flat design. This allows for achieving a soft, extruded plastic look and almost 3D styling.",
+      time: "7",
+      tags: "VSCode Programming extension",
+      date: "Mar 11, 2022",
+      createdAt: "2023-03-25T03:23:46.052Z",
+      updatedAt: "2023-03-25T03:23:46.052Z",
+      __v: 0,
+    },
+  ];
 
   return (
     <>
-      <div className=" mt-12 ml-3 lg:ml-24 md:mt-0 md:ml-0 flex flex-col lg:flex-row">
+      <div className=" mt-12 ml-3 lg:ml-24 md:mt-0 md:ml-3 flex flex-col md:flex-row">
         <div className="mt-24">
           <div className="flex flex-col md:mr-3 lg:mr-20 lg:w-9/12 md:flex-row md:justify-between">
             <div className="flex">
@@ -143,66 +181,10 @@ export default function Page({ params }) {
           </div>
 
           {/* rekomen news */}
-          <div className=" lg:w-9/12 mt-16">
-            {/* card */}
-            <div className="mt-5">
-              <div className="flex md:mt-0">
-                <Image
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9wPQWJOJu8CP11fYLGvdxz5zfJV4kBVsL8Q&usqp=CAU"
-                  width={50}
-                  height={50}
-                  alt="user"
-                  className="rounded-full"
-                />
-                <h1 className="font-semibold ml-3 mt-3">Prayoga Adi</h1>
-                <p className="font-bold ml-3 mt-3 text-gray-400">·</p>
-                <p className="text-sm ml-3 mt-3.5 text-gray-400">Feb 24</p>
-              </div>
-              <div className="flex flex-col-reverse mr-3 md:flex-row">
-                <div>
-                  <h1 className="font-bold md:mt-5 md:text-xl">
-                    7 useful CSS Tricks
-                  </h1>
-                  <p className="mt-3 ">{sentence.slice(0, 100) + "..."}</p>
-                </div>
-                <div className="md:mt-5 md:ml-3 md:mr-3 lg:mt-0 lg:ml-3  ">
-                  <Image
-                    src="https://miro.medium.com/v2/resize:fit:1200/1*oV6DFQ6jHkcmz5g48-b4tw.png"
-                    width={400}
-                    height={400}
-                    alt="news poster"
-                    className="aspect-3-2"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col-reverse md:gap-8 md:flex-row">
-                <div className="flex mt-5 md:mt-5">
-                  <p className="bg-gray-200 pl-3 pr-3 pt-2 pb-2 rounded-full text-xs">
-                    Progamming
-                  </p>
-                  <p className="mt-1.5 ml-3 text-sm text-gray-500">
-                    17 min read
-                  </p>
-                  <p className="font-bold ml-3 mt-1.5 text-gray-400">·</p>
-                  <p className="mt-1.5 ml-3 text-sm text-gray-500">
-                    Selected for you
-                  </p>
-                </div>
-                <div className="flex gap-5 mt-5 md:mt-7">
-                  <Link href="https://www.instagram.com/reyhanmd._">
-                    <MdOutlineBookmarkAdd />
-                  </Link>
-                  <Link href="https://www.instagram.com/reyhanmd._">
-                    <FiMinusCircle />
-                  </Link>
-                  <Link href="https://www.instagram.com/reyhanmd._">
-                    <GoKebabHorizontal />
-                  </Link>
-                </div>
-              </div>
-              <hr className="border-t border-gray-600 mt-5 mr-3 md:mr-3" />
-            </div>
-          </div>
+          <div className=" lg:w-9/12 mt-16">{/* card */}</div>
+          {exampleData.map((item) => {
+            return <Card {...item} key={item._id} />;
+          })}
 
           <div className="text-center lg:w-9/12 mt-5 mb-8">
             <Link
@@ -215,8 +197,8 @@ export default function Page({ params }) {
         </div>
 
         {/* sidebar */}
-        <div className="md:m-auto">
-          <SideBar/>
+        <div>
+          <SideBar />
         </div>
       </div>
     </>
