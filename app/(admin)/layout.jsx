@@ -1,7 +1,6 @@
 import "../../styles/globals.css";
 import localFont from "next/font/local";
 import { Poppins, Source_Serif_Pro } from "next/font/google";
-import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Create Next App",
@@ -45,9 +44,7 @@ export default function RootLayout({ children }) {
       className={`${gts.variable} ${poppins.variable} ${ssp.variable}`}
     >
       <body>
-        
-        <Navbar />
-        {children}
+        <div className="max-w-[80%] mx-auto">{children}</div>
       </body>
     </html>
   );
