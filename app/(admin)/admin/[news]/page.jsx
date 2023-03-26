@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Content from "../fragments/Content";
 
 export default function page({ params }) {
   const [author, setAuthor] = useState([
@@ -32,13 +33,12 @@ export default function page({ params }) {
         );
         setData(data);
         setAuthor(data.author);
-        setIsLoading(false);
       };
       fetchDatas();
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [ID]);
 
   const formattedDate = (value) => {
     const tanggal = value;
@@ -49,6 +49,10 @@ export default function page({ params }) {
     ).slice(-2)}-${("0" + date.getDate()).slice(-2)}`;
 
     return formatted;
+  };
+
+  const handleContent = (content, delta, source, editor) => {
+    setData({ ...data, content: content });
   };
 
   const handleChange = (event) => {
@@ -71,6 +75,7 @@ export default function page({ params }) {
         await axios.post(`${process.env.NEXT_PUBLIC_API_URL}`, data);
         toast.success("Success add news");
       } catch (error) {
+        toast.error("Failed add news");
         console.log(error);
       }
     } else {
@@ -78,13 +83,14 @@ export default function page({ params }) {
         await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/${ID}`, data);
         toast.success("Success updating news");
       } catch (error) {
+        toast.error("Failed updating news");
         console.log(error);
       }
     }
   };
 
   return (
-    <section className="p-6 bg-white rounded-md dark:bg-gray-800">
+    <section className="p-6 bg-white rounded-md dark:bg-gray-800 h-fit pb-28">
       <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">
         {data ? "Edit News" : "Add News"}
       </h2>
@@ -169,17 +175,16 @@ export default function page({ params }) {
             value={data.tags}
             onChange={handleChange}
           />
-          <InputForm
-            for={"content"}
-            label={"Content"}
-            type={"text"}
+          <Content
+            theme={"snow"}
             value={data.content}
-            onChange={handleChange}
+            onChange={handleContent}
+            className={"col-span-2"}
           />
-          <div className="flex justify-end mt-6">
+          <div className="flex justify-end mt-8 col-span-2">
             <button
               type="submit"
-              className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+              className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-dark rounded-sm hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
             >
               Save
             </button>

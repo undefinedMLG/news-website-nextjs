@@ -18,13 +18,12 @@ export default function Page() {
       const fetchDatas = async () => {
         const { data } = await axios.get(process.env.NEXT_PUBLIC_API_URL);
         setDatas(data);
-        setIsLoading(false);
       };
       fetchDatas();
     } catch (error) {
       console.log(error);
-      setIsLoading(false);
     }
+    setIsLoading(false);
   }, []);
 
   const handleDelete = async (id) => {
