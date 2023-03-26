@@ -11,6 +11,7 @@ import Card from "@/components/Card";
 export default function Page({ params }) {
   const ID = params.detail;
 
+
   const exampleData = [
     {
       _id: "641d65873089731c67977c99",
@@ -59,6 +60,8 @@ export default function Page({ params }) {
       __v: 0,
     },
   ];
+
+  const content="<h1>APA</h1>"
 
   return (
     <>
@@ -113,13 +116,10 @@ export default function Page({ params }) {
             <div>
               <h1 className="text-3xl font-bold">UI/UX Trend in 2023</h1>
             </div>
-            <div className="mt-5">
-              <p>
-                It is well known that 2021 was exciting for designers all around
-                the industry. This makes me believe that 2022 will be no less.
-                Design trends now should be more user-centered and have an
-                easy-to-navigate interface.
-              </p>
+            <div className="mt-5"  dangerouslySetInnerHTML={{__html: content}}>
+              
+               
+              
             </div>
             <div>
               <Image
