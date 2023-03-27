@@ -62,7 +62,7 @@ export default function Trussted() {
                 <span className="capitalize text-gray-500 font-normal">
                   {news.date}
                 </span>
-              </h1> 
+              </h1>
             </div>
             <h1 className=" text-black font-semibold font-[poppins] text-base truncate max-w-xs">
               {news.headline}
