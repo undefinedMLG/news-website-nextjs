@@ -3,12 +3,14 @@ import Link from "next/link";
 import { GoKebabHorizontal } from "react-icons/go";
 import { FiMinusCircle } from "react-icons/fi";
 import { MdOutlineBookmarkAdd } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 const Card = (props) => {
   const item  = props;
+  const router = useRouter()
 
   return (
-    <div className="mt-5 lg:w-9/12">
+    <div className="mt-5 cursor-pointer hover:bg-zinc-100		 lg:w-9/12" onClick={()=>router.push(`/${item._id}`)}>
       <div className="flex md:mt-0">
         <Image
           src={item.author[0].image}
@@ -24,7 +26,7 @@ const Card = (props) => {
       <div className="flex flex-col-reverse mr-3 md:flex-row">
         <div>
           <h1 className="font-bold md:mt-5 md:text-xl">{item.title}</h1>
-          <p className="mt-3 ">{item.content.slice(0, 100) + "..."}</p>
+          <p className="mt-3 ">{item.author[0].desc.slice(0, 100) + "..."}</p>
         </div>
         <div className="md:mt-5 md:ml-3 md:mr-3 lg:mt-0 lg:ml-3  ">
           <Image

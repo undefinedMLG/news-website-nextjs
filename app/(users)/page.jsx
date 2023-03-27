@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function page() {
   return (
-    <div className="text-red-500">
+    <div >
       <Landing />
       <SideBar />
-      <Link href="/1">Klik</Link>
+      <Link href="/64205660ab4ca1da99471779">Klik</Link>
     </div>
   );
 }

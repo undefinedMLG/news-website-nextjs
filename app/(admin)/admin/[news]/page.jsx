@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Content from "../fragments/Content";
 
-export default function page({ params }) {
+export default function Page({ params }) {
   const [author, setAuthor] = useState([
     { name: "", desc: "", image: "", verified: false },
   ]);
