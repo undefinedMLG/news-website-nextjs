@@ -18,9 +18,21 @@ module.exports = {
         gts: ["var(--font-gts)"],
         poppins: ["var(--font-poppins)"],
         ssp: ["var(--font-ssp)"],
-      }
-
+      },
     },
   },
-  plugins: [],
-}
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          // Define your custom class
+          ".aspect-3-2": {
+            aspectRatio: "3/2",
+            objectFit: "contain",
+          },
+        },
+        ["responsive"]
+      );
+    },
+  ],
+};
