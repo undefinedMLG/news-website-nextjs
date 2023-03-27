@@ -8,6 +8,7 @@ export default function page() {
       <Landing />
       <CarousellNews />
       <SideBar />
+   
     </div>
   );
 }

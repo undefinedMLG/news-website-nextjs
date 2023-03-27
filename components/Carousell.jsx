@@ -27,9 +27,6 @@ const images = [
 ];
 
 
-
-
-
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
