@@ -26,7 +26,7 @@ export default function page({ params }) {
 
   useEffect(() => {
     try {
-      if (ID === "new") return;
+      if (ID === "new") return false;
       const fetchDatas = async () => {
         const { data } = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}/${ID}`
@@ -88,6 +88,8 @@ export default function page({ params }) {
       }
     }
   };
+
+  console.log(data);
 
   return (
     <section className="p-6 bg-white rounded-md dark:bg-gray-800 h-fit pb-28">

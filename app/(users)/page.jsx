@@ -1,3 +1,11 @@
+import Tabbing from "@/components/user/Tabbing";
+import HeroSection from "./sections/HeroSection";
+
 export default function page() {
-  return <div className="text-red-500">Be Happy Today!</div>;
+  return (
+    <div>
+      <HeroSection />
+      <Tabbing />
+    </div>
+  );
 }
