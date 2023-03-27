@@ -1,9 +1,8 @@
-import "../styles/globals.css";
+import "../../styles/globals.css";
 
 import localFont from "next/font/local";
 import { Poppins, Source_Serif_Pro } from "next/font/google";
-import Navbar from "@/components/Navbar";
-
+import Navbar from "@/components/user/Navbar";
 
 export const metadata = {
   title: "Create Next App",
@@ -27,12 +26,12 @@ const ssp = Source_Serif_Pro({
 const gts = localFont({
   src: [
     {
-      path: "../assets/fonts/GTS-Bold.otf",
+      path: "../../assets/fonts/GTS-Bold.otf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../assets/fonts/GTS-Reguler.otf",
+      path: "../../assets/fonts/GTS-Reguler.otf",
       weight: "400",
       style: "normal",
     },
@@ -47,7 +46,6 @@ export default function RootLayout({ children }) {
       className={`${gts.variable} ${poppins.variable} ${ssp.variable}`}
     >
       <body>
-        {" "}
         <Navbar />
         {children}
       </body>

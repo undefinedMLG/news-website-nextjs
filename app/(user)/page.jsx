@@ -1,14 +1,13 @@
-import Landing from "@/components/Landing";
-import SideBar from "@/components/Sidebar/SideBar";
-import CarousellNews from "@/components/mainNews";
+import SideBar from "@/components/user/Sidebar/SideBar";
+import HeroSection from "./sections/HeroSection";
+import MainNewsSection from "./sections/MainNewsSection";
 
 export default function page() {
   return (
-    <div className="text-red-500">
-      <Landing />
-      <CarousellNews />
+    <div>
+      <HeroSection />
+      <MainNewsSection />
       <SideBar />
-   
     </div>
   );
 }

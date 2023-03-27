@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.slick-list {
+  margin: 0 0.8rem;
+}
+.slick-slide > div {
+  padding: 0 0.8rem;
+}
