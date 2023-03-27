@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className=" absolute w-full flex justify-between items-center z-50 px-32 bg-transparent border-b-2 text-black border-b-black h-16 max-md:flex-col  max-md:px-4">
+    <div className=" fixed w-full flex justify-between items-center z-50 px-32 bg-transparent border-b-2 text-black border-b-black h-16 max-md:flex-col  max-md:px-4">
       <div className="h-8 w-auto  flex items-center">
         <h1 className="font-[ssp] text-4xl font-[700]">Undifined</h1>
       </div>

@@ -25,10 +25,7 @@ export default function Follow() {
     getData();
   }, []);
 
-  const news = [0];
-
-  const gajelas = news.filter((item) => item % 2 === 0).slice(0, 3);
-
+ 
   return (
     <div className="flex flex-col w-full">
       <h1 className="font-[poppins] font-medium text-black mb-6 mt-8 capitalize text-2xl">
@@ -38,7 +35,7 @@ export default function Follow() {
         <div className="">
           <Link
             key={index}
-            href={`/${news.id}`}
+            href={`/${Follow.id}`}
             className="hover:bg-gray-100 p-2 flex w-full justify-between mb- items-center"
           >
             <div className="flex  gap-3">
