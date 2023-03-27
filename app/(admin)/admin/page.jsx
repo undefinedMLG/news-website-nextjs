@@ -1,4 +1,5 @@
 "use client";
+import InputForm from "@/components/admin/InputForm";
 import Thead from "@/components/admin/Thead";
 import TrBody from "@/components/admin/TrBody";
 import axios from "axios";
@@ -9,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function Page() {
   const [datas, setDatas] = useState([]);
+  const [query, setQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -16,15 +18,21 @@ export default function Page() {
     setIsLoading(true);
     try {
       const fetchDatas = async () => {
-        const { data } = await axios.get(process.env.NEXT_PUBLIC_API_URL);
+        const { data } = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/?search=${query}`
+        );
         setDatas(data);
+        setIsLoading(false);
       };
       fetchDatas();
     } catch (error) {
       console.log(error);
     }
-    setIsLoading(false);
-  }, []);
+  }, [query]);
+
+  const handleQuery = (event) => {
+    setQuery(event.target.value);
+  };
 
   const handleDelete = async (id) => {
     console.log(id);
@@ -51,6 +59,14 @@ export default function Page() {
           >
             Add new
           </button>
+        </div>
+        <div className="w-2/5 mt-8">
+          <InputForm
+            type={"text"}
+            value={query}
+            placeholder={"Search e.g VS Code"}
+            onChange={handleQuery}
+          />
         </div>
         <div className="mt-6">
           <Thead>
