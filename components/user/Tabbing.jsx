@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,6 +7,7 @@ import axios from "axios";
 import CardAll from "./CardAll";
 import { usePathname, useRouter } from "next/navigation";
 import { IoSearch } from "react-icons/io5";
+import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 const settings = {
   dots: false,
   slidesToShow: 6,
@@ -76,6 +77,9 @@ export default function Tabbing() {
     setSearch(event.target.value);
   };
 
+  const sliderRef = useRef(null);
+  const next = () => sliderRef.current.slickNext();
+  const previous = () => sliderRef.current.slickPrev();
   return (
     <div className="w-full lg:w-3/5 pt-6">
       <div
@@ -90,27 +94,41 @@ export default function Tabbing() {
           onChange={(event) => handleSearch(event)}
         />
       </div>
-      <Slider {...settings} className="">
-        {categoryOptions.map((item, index) => {
-          return (
-            <div
-              key={index}
-              onClick={() => handleClick(item.category)}
-              className="w-fit cursor-pointer font-poppins"
-            >
-              <p
-                className={
-                  category === item.category
-                    ? "font-normal min-w-full text-dark text-base text-center border-b-2 border-dark py-2"
-                    : "font-normal min-w-full text-grey-text text-base text-center border-b py-2 border-grey-line"
-                }
+      <div className="relative">
+        <Slider {...settings} className="" ref={sliderRef}>
+          {categoryOptions.map((item, index) => {
+            return (
+              <div
+                key={index}
+                onClick={() => handleClick(item.category)}
+                className="w-fit cursor-pointer font-poppins pl-3"
               >
-                {item.category}
-              </p>
-            </div>
-          );
-        })}
-      </Slider>
+                <p
+                  className={
+                    category === item.category
+                      ? "font-normal min-w-full text-dark text-base text-center border-b-2 border-dark py-2"
+                      : "font-normal min-w-full text-grey-text text-base text-center border-b py-2 border-grey-line"
+                  }
+                >
+                  {item.category}
+                </p>
+              </div>
+            );
+          })}
+        </Slider>
+        <button
+          onClick={previous}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white px-1 py-1 text-xl font-bold rounded-full focus:outline-none -mr-8 border-2 border-white"
+        >
+          <BiChevronLeft />
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-black text-white px-1 py-1 text-xl font-bold rounded-full focus:outline-none -mr-8 border-2 border-white"
+        >
+          <BiChevronRight />
+        </button>
+      </div>
       <div>
         {isLoading && (
           <div className="w-full flex justify-center mt-4">

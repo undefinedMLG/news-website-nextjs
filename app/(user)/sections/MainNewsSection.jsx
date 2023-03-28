@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import { ImNewspaper } from "react-icons/im";
 import axios from "axios";
 import Slider from "react-slick";
@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { CardMainNews } from "@/components/user/CardMainNews";
 import { useRouter } from "next/navigation";
 import "../../../styles/main-news.css";
+import {BiChevronRight} from "react-icons/bi"
 
 const settings = {
   dots: false,
@@ -38,6 +39,9 @@ function MainNewsSection() {
     }
   }, []);
 
+  const sliderRef = useRef(null);
+  const next = () => sliderRef.current.slickNext();
+
   return (
     <div className="py-10 max-w-[80%] mx-auto text-black w-full">
       <div className="flex gap-2 items-center mb-8 text-black ">
@@ -52,23 +56,31 @@ function MainNewsSection() {
             <p>Loading...</p>
           </div>
         )}
-        {data && (
-          <Slider className="w-full" {...settings}>
-            {data.map((item) => (
-              <CardMainNews
-                key={item._id}
-                onClick={() => router.push(`/${item._id}`)}
-                image={item.image}
-                authorName={item.author[0].name}
-                authorImage={item.author[0].image}
-                date={item.date}
-                title={item.title}
-                category={item.category}
-                time={item.time}
-              />
-            ))}
-          </Slider>
-        )}
+        <div className="relative">
+          {data && (
+            <Slider className="w-full" {...settings} ref={sliderRef}>
+              {data.map((item) => (
+                <CardMainNews
+                  key={item._id}
+                  onClick={() => router.push(`/${item._id}`)}
+                  image={item.image}
+                  authorName={item.author[0].name}
+                  authorImage={item.author[0].image}
+                  date={item.date}
+                  title={item.title}
+                  category={item.category}
+                  time={item.time}
+                />
+              ))}
+            </Slider>
+          )}
+          <button
+            onClick={next}
+            className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-black text-white px-3 py-3 text-4xl font-bold rounded-full focus:outline-none -mr-8 border-2 border-white"
+          >
+            <BiChevronRight />
+          </button>
+        </div>
       </div>
     </div>
   );
