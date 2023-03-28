@@ -26,7 +26,7 @@ const Navbar = () => {
     <div
       className={`fixed w-full flex justify-between items-center z-50 px-32 border-b-2 text-black border-b-black h-16 max-md:flex-col max-md:px-4 duration-300
         ${position < 490 && path === "/" ? "bg-secondary" : "bg-white"} ${
-        path === "/admin" || "/admin/new" ? "hidden" : "block"
+        path === "/admin" ? "hidden" : "block"
       }
       
       `}
