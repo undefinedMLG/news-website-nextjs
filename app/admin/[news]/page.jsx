@@ -1,5 +1,5 @@
 "use client";
-import InputForm from "@/components/Admin/InputForm";
+import InputForm from "@/components/Admins/InputForm";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";

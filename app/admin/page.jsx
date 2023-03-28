@@ -1,7 +1,7 @@
 "use client";
-import InputForm from "@/components/Admin/InputForm";
-import Thead from "@/components/Admin/Thead";
-import TrBody from "@/components/Admin/TrBody";
+import InputForm from "@/components/Admins/InputForm";
+import Thead from "@/components/Admins/Thead";
+import TrBody from "@/components/Admins/TrBody";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
