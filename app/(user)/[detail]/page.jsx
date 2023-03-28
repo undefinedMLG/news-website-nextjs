@@ -15,42 +15,38 @@ export default function Page({ params }) {
   const [datas, setDatas] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [tags, setTags] = useState();
-  const ID = params.detail;
   const [isLoading, setIsLoading] = useState(true);
-  console.log(ID);
-  const getData = async () => {
-    setIsLoading(true);
-    try {
-      const { data } = await axios.get(
-        `https://undefinednews.vercel.app/api/v2/news/${ID}`
-      );
-      setDatas(data);
-      setTags(data.tags.split(" "));
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-      setIsLoading(false);
-    }
-  };
-
-  const filterData = async () => {
-    try {
-      const filter = await axios.get(
-        `https://undefinednews.vercel.app/api/v2/news/?category=${datas.category}`
-      );
-      setFilteredData(filter.data.filter((e) => e._id != datas._id));
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const ID = params.detail;
 
   useEffect(() => {
+    const getData = async () => {
+      setIsLoading(true);
+      try {
+        const { data } = await axios.get(
+          `https://undefinednews.vercel.app/api/v2/news/${ID}`
+        );
+        setDatas(data);
+        setTags(data.tags.split(" "));
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+        setIsLoading(false);
+      }
+    };
+
+    const filterData = async () => {
+      try {
+        const filter = await axios.get(
+          `https://undefinednews.vercel.app/api/v2/news/?category=${datas.category}`
+        );
+        setFilteredData(filter.data.filter((e) => e._id != datas._id));
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getData();
-  }, [ID]);
-
-  useEffect(() => {
     filterData();
-  }, [datas]);
+  }, [ID, datas.category, datas._id]);
 
   return (
     <>

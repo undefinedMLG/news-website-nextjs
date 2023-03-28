@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import ReactModal from "react-modal";
 import { IoMdClose } from "react-icons/Io";
+import Image from "next/image";
 
 export default function Trussted() {
   const [data, setData] = useState([]);
@@ -38,11 +39,14 @@ export default function Trussted() {
         Trussted Intuition
       </h1>
       {data.slice(0, 3).map((news, index) => (
-        <div className="flex flex-col mb-2 max-w-sm hover:bg-gray-100 px-5 py-2 rounded-sm">
-          <Link key={index} href={`/${news.id}`}>
+        <div
+          key={index}
+          className="flex flex-col mb-2 max-w-sm hover:bg-gray-100 px-5 py-2 rounded-sm"
+        >
+          <Link href={`/${news.id}`}>
             <div className="flex gap-2 mb-1">
               <div className="rounded-full object-cover h-8 w-8  ">
-                <img
+                <Image
                   src={news.imagehuman}
                   alt={news.name}
                   width={40}
@@ -101,11 +105,14 @@ export default function Trussted() {
 
         <div className="h-96 overflow-y-auto px-6">
           {data.map((news, index) => (
-            <div className="relative flex flex-col mb-6 max-w-sm  hover:bg-gray-100">
-              <Link key={index} href={`/${news.id}`}>
+            <div
+              key={index}
+              className="relative flex flex-col mb-6 max-w-sm  hover:bg-gray-100"
+            >
+              <div>
                 <div className="flex gap-2 mb-1">
                   <div className="rounded-full object-cover h-8 w-8  ">
-                    <img
+                    <Image
                       src={news.imagehuman}
                       alt={news.name}
                       width={40}
@@ -126,7 +133,7 @@ export default function Trussted() {
                 <h1 className=" text-black font-semibold font-[poppins] text-xl truncate max-w-xs">
                   {news.headline}
                 </h1>
-              </Link>
+              </div>
             </div>
           ))}
         </div>

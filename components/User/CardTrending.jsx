@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function CardTrending(props) {
@@ -11,9 +12,11 @@ export default function CardTrending(props) {
       </div>
       <div className="px-4">
         <div className="pt-9 flex w-full">
-          <img
+          <Image
             src={props.authorImage}
             alt=""
+            width={200}
+            height={200}
             className="text-[32px] flex rounded-full w-8 h-8 object-cover"
           />
           <div className="pl-3 flex text-sm font-medium items-center">

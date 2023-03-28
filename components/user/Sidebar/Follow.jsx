@@ -1,8 +1,8 @@
 "use client";
 import { IoMdClose } from "react-icons/Io";
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import ReactModal from "react-modal";
+import Image from "next/image";
 
 export default function Follow() {
   const [data, setData] = useState([]);
@@ -31,16 +31,14 @@ export default function Follow() {
         Who to follow
       </h1>
       {data.slice(0, 3).map((Follow, index) => (
-        <div className="">
-          <Link
-            key={index}
-            href={`/${Follow.id}`}
-            className="hover:bg-gray-100 p-2 flex w-full justify-between mb- items-center"
-          >
+        <div key={index} className="">
+          <div className="hover:bg-gray-100 p-2 flex w-full justify-between mb- items-center">
             <div className="flex  gap-3">
-              <img
+              <Image
                 src={Follow.imagehuman}
                 alt=""
+                width={40}
+                height={40}
                 className="h-8 w-8 rounded-full object-cover"
               />
               <div className=" max-w-[160px]   ">
@@ -59,7 +57,7 @@ export default function Follow() {
             >
               Follow{" "}
             </button>
-          </Link>
+          </div>
         </div>
       ))}
 
@@ -98,11 +96,16 @@ export default function Follow() {
 
         <div className="h-96 overflow-y-auto px-6">
           {data.map((Follow, index) => (
-            <div className="flex w-full justify-between mb-6 hover:bg-gray items-end  ">
+            <div
+              key={index}
+              className="flex w-full justify-between mb-6 hover:bg-gray items-end  "
+            >
               <div className="flex  gap-3">
-                <img
+                <Image
                   src={Follow.imagehuman}
                   alt=""
+                  width={40}
+                  height={40}
                   className="h-8 w-8 rounded-full"
                 />
                 <div className=" max-w-[160px]   ">
