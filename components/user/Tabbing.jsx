@@ -121,18 +121,19 @@ export default function Tabbing() {
           <div className="card-wrapper">
             {datas.map((item) => {
               return (
-                <CardAll
-                  key={item._id}
-                  onClick={() => router.push(item._id)}
-                  authorImage={item.author[0].image}
-                  authorName={item.author[0].name}
-                  date={item.date}
-                  title={item.title}
-                  image={item.image}
-                  category={item.category}
-                  time={item.time}
-                  desc={item.author[0].desc}
-                />
+                <div key={item._id}>
+                  <CardAll
+                    onClick={() => router.push(item._id)}
+                    authorImage={item.author[0].image}
+                    authorName={item.author[0].name}
+                    date={item.date}
+                    title={item.title}
+                    image={item.image}
+                    category={item.category}
+                    time={item.time}
+                    desc={item.author[0].desc}
+                  />
+                </div>
               );
             })}
           </div>

@@ -1,10 +1,12 @@
-import SideBar from "@/components/user/Sidebar/SideBar";
 import React from "react";
+import TrendingTopics from "../sections/TrendingTopics";
 
 export default function page() {
   return (
-    <FixedScrollable>
-      <SideBar />
-    </FixedScrollable>
+    <div className="relative top-16">
+      <div className="w-[90%] mx-auto">
+        <TrendingTopics />
+      </div>
+    </div>
   );
 }

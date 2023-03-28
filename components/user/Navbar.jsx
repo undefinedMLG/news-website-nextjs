@@ -29,7 +29,7 @@ const Navbar = () => {
     >
       <div className="h-8 w-auto flex items-center">
         <h1 className="font-ssp text-3xl font-bold hidden md:block">
-          Undifined
+          Undefined
         </h1>
       </div>
 

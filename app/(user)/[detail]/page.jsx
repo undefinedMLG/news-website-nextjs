@@ -6,7 +6,7 @@ import { MdOutlineBookmarkAdd } from "react-icons/md";
 import { GoKebabHorizontal } from "react-icons/go";
 import { PropagateLoader } from "react-spinners";
 import Link from "next/link";
-import Card from "@/components/Card";
+import Card from "@/components/user/Card";
 import axios from "axios";
 import Image from "next/image";
 import SideBar from "@/components/user/Sidebar/SideBar";
@@ -61,7 +61,7 @@ export default function Page({ params }) {
           </div>
         </div>
       ) : (
-        <div className=" mt-12 ml-3 lg:ml-24 md:mt-0 md:ml-3 flex flex-col md:flex-row">
+        <div className=" mt-12 ml-3 lg:ml-24 md:mt-0 md:ml-3 flex flex-col md:flex-row lg:max-w-[70%]">
           <div className="mt-24">
             <div className="flex flex-col md:mr-3 lg:mr-20 lg:w-9/12 md:flex-row md:justify-between">
               <div className="flex">
@@ -73,7 +73,7 @@ export default function Page({ params }) {
                         width={50}
                         height={50}
                         alt="user"
-                        className="rounded-full"
+                        className="rounded-full object-cover w-12 h-12"
                       />
                     </div>
                     <div className="ml-3">

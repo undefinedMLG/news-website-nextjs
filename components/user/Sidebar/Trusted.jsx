@@ -32,10 +32,6 @@ export default function Trussted() {
     getData();
   }, []);
 
-  const news = [0];
-
-  const gajelas = news.filter((item) => item % 2 === 0).slice(0, 3);
-
   return (
     <div className="flex flex-col w-full  ">
       <h1 className="font-[poppins] font-medium text-black mb-6 mt-8 text-2xl">
@@ -54,7 +50,7 @@ export default function Trussted() {
                   className="h-full object-cover rounded-full"
                 />
               </div>
-              <h1 className="flex gap-2 items-center text-sm  mb-2 uppercase font-[poppins] font-medium text-black">
+              <h1 className="flex gap-2 items-center text-sm  mb-2 font-poppins font-semibold text-dark">
                 {news.name}
                 <span className="text-sky-500">
                   <BsFillPatchCheckFill />

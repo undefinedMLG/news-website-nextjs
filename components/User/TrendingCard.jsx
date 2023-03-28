@@ -15,28 +15,6 @@ export const TrendingCard = () => {
           <div className="grid lg:grid-cols-3 w-full md:grid-cols-2 h-72 max-lg:overflow-y-scroll grid-cols-1">
             <div className="gap-5 flex text-[#070E13] font-poppins">
               <div className="w-16 text-[40px] text-[#DFDFDF] flex items-center ">
-                01
-              </div>
-              <section>
-                <div className="pt-9 flex">
-                  <img
-                    src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                    alt=""
-                    className="text-[32px] flex rounded-full w-8 h-8 object-cover"
-                  />
-                  <div className="pl-3 flex text-[14px] items-center">
-                    Prayoga Adi
-                  </div>
-                </div>
-                <div className="pt-2 text-[16px]">UI/UX Trends in 2023</div>
-                <div className="pt-6 text-[12px] text-[#7C7C7C]">
-                  Mar 21 • 17 min read
-                </div>
-              </section>
-            </div>
-
-            <div className="gap-5 flex text-[#070E13] font-poppins">
-              <div className="w-16 text-[40px] text-[#DFDFDF] flex items-center ">
                 02
               </div>
               <section>
