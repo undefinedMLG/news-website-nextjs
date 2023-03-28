@@ -9,7 +9,7 @@ import Link from "next/link";
 import Card from "@/components/user/Card.jsx";
 import axios from "axios";
 import Image from "next/image";
-import SideBar from "@/components/user/sidebar/SideBar";
+import SideBar from "@/components/Users/Sidebar/SideBar";
 
 export default function Page({ params }) {
   const [datas, setDatas] = useState([]);
