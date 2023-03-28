@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
-import Carousel from "@/components/user/Carousell";
+import Carousel from "@/components/User/Carousell";
 
 export default function HeroSection() {
   const router = useRouter();

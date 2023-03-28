@@ -1,5 +1,5 @@
 "use client";
-import CardTrending from "@/components/user/CardTrending";
+import CardTrending from "@/components/User/CardTrending";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";

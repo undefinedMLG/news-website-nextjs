@@ -2,7 +2,7 @@ import "../styles/globals.css";
 
 import localFont from "next/font/local";
 import { Poppins, Source_Serif_Pro } from "next/font/google";
-import Navbar from "@/components/user/Navbar";
+import Navbar from "@/components/User/Navbar";
 
 export const metadata = {
   title: "News Website | Undefined",
