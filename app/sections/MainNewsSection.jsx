@@ -10,9 +10,7 @@ import { useRouter } from "next/navigation";
 import "../../styles/main-news.css";
 import { BiChevronRight } from "react-icons/bi";
 import "../../styles/main-news.css";
-import { BiChevronRight } from "react-icons/bi";
 import "../../styles/main-news.css";
-import { CardMainNews } from "@/components/Users/CardMainNews";
 
 const settings = {
   dots: false,
