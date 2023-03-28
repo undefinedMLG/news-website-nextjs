@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from "next/navigation";
-import "../../../styles/main-news.css";
+import "../../styles/main-news.css";
 import { CardMainNews } from "@/components/Users/CardMainNews";
 
 const settings = {

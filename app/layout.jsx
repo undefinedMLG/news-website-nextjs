@@ -1,7 +1,8 @@
-import "../../../styles/globals.css";
+import "../styles/globals.css";
 
 import localFont from "next/font/local";
 import { Poppins, Source_Serif_Pro } from "next/font/google";
+import Navbar from "@/components/Users/Navbar";
 
 export const metadata = {
   title: "News Website | Undefined",
@@ -25,12 +26,12 @@ const ssp = Source_Serif_Pro({
 const gts = localFont({
   src: [
     {
-      path: "../../../assets/fonts/GTS-Bold.otf",
+      path: "../assets/fonts/GTS-Bold.otf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../../../assets/fonts/GTS-Bold.otf",
+      path: "../assets/fonts/GTS-Reguler.otf",
       weight: "400",
       style: "normal",
     },
@@ -45,7 +46,8 @@ export default function RootLayout({ children }) {
       className={`${gts.variable} ${poppins.variable} ${ssp.variable}`}
     >
       <body>
-        <div className="max-w-[80%] mx-auto">{children}</div>
+        <Navbar />
+        {children}
       </body>
     </html>
   );
