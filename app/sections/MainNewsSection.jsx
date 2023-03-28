@@ -42,7 +42,7 @@ function MainNewsSection() {
         <p className=" ring-2 p-1.5 rounded-full text-xl ring-black">
           <ImNewspaper />
         </p>
-        <h1 className="text-xl font-[poppins] font-medium">Main News </h1>
+        <h1 className="text-xl font-poppins font-medium">Main News </h1>
       </div>
       <div className="w-full">
         {isLoading && (

@@ -29,7 +29,7 @@ export default function TrendingTopics() {
         <div className="p-2 ring-2 ring-[#070E13] rounded-full">
           <FiTrendingUp />
         </div>
-        <h1 className="flex text-[20px]">Trending Topic</h1>
+        <h1 className="text-xl font-poppins font-medium">Trending Topic</h1>
       </div>
       {isLoading && (
         <div className="w-full flex justify-center relative top-12 ">
@@ -37,7 +37,7 @@ export default function TrendingTopics() {
         </div>
       )}
       {datas && (
-        <div className="grid lg:grid-cols-3 w-full md:grid-cols-2 h-72 max-lg:overflow-y-scroll grid-cols-1">
+        <div className="grid lg:grid-cols-3 w-full md:grid-cols-2 grid-cols-1">
           {datas.slice(0, 6).map((item, index) => {
             return (
               <div key={index}>
