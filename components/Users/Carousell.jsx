@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState,useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { BiChevronRight } from "react-icons/bi";
 import axios from "axios";
 import Slider from "react-slick";
@@ -8,27 +8,23 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from "next/navigation";
 
-
-
 const Carousel = () => {
   const [datas, setDatas] = useState([]);
-  const router =useRouter()
+  const router = useRouter();
 
-
-useEffect(()=>{ 
-  async function fetchData() {
-    try {
-      const { data } = await axios.get(
-        "https://undefinednews.vercel.app/api/v2/news"
-      );
-      setDatas(data.slice(0, 3));
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const { data } = await axios.get(
+          "https://undefinednews.vercel.app/api/v2/news"
+        );
+        setDatas(data.slice(0, 3));
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
-  fetchData();
-},[])
-
+    fetchData();
+  }, []);
 
   const settings = {
     dots: false,
@@ -36,7 +32,8 @@ useEffect(()=>{
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows:false
+    autoplay: 300,
+    arrows: false,
   };
   const sliderRef = useRef(null);
   const next = () => sliderRef.current.slickNext();
@@ -62,16 +59,18 @@ useEffect(()=>{
               <h1 className="text-2xl font-[poppins] font-semibold truncate mt-4 hidden lg:block">
                 {item.title}
               </h1>
-              <p className="truncate hidden lg:block">{item.author[0].desc.slice(0, 50)}</p>
+              <p className="truncate hidden lg:block">
+                {item.author[0].desc.slice(0, 50)}
+              </p>
             </>
           ))}
         </Slider>
-                <button
-                  onClick={next}
-                  className="absolute right-5 top-1/2 lg:top-[40%] transform -translate-y-1/2 bg-black text-white px-3 py-3 text-4xl font-bold rounded-full focus:outline-none -mr-8 border-2 border-white"
-                >
-                  <BiChevronRight />
-                </button>
+        <button
+          onClick={next}
+          className="absolute right-5 top-1/2 lg:top-[40%] transform -translate-y-1/2 bg-black text-white px-3 py-3 text-4xl font-bold rounded-full focus:outline-none -mr-8 border-2 border-white"
+        >
+          <BiChevronRight />
+        </button>
       </div>
     </div>
   );

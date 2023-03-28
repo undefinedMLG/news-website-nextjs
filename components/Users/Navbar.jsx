@@ -20,6 +20,8 @@ const Navbar = () => {
     };
   }, []);
 
+  console.log(position);
+
   return (
     <div
       className={`fixed w-full flex justify-between items-center z-50 px-32 border-b-2 text-black border-b-black h-16 max-md:flex-col max-md:px-4 duration-300
@@ -39,11 +41,11 @@ const Navbar = () => {
         <div className="flex gap-8 text-sm font-medium font-poppins max-md:-mt-10 ">
           <Link href={"/"}>Home</Link>
           <Link href={"/explore"}>Explore</Link>
-          <Link href={"/write"}>Write</Link>
+          <Link href={"/admin"}>Write</Link>
         </div>
         <div className=" max-md:-mt-10">
           <Link
-            href={"/write"}
+            href={"/admin"}
             className={`py-2 px-6 rounded-full text-white duration-300 ${
               position < 490 && path === "/" ? "bg-dark" : "bg-primary"
             }`}
