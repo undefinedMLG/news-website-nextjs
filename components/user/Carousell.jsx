@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { BiChevronRight } from "react-icons/bi";
 
@@ -37,9 +38,11 @@ const Carousel = () => {
     <div className="flex justify-center items-center">
       <div className=" max-w-2xl w-[437px]">
         <div className="relative  border-2 border-black object-cover">
-          <img
+          <Image
             src={images[currentIndex]?.url}
             alt={images[currentIndex]?.title}
+            width={200}
+            height={200}
             className=" h-[235px] w-[437px] object-cover"
           />
           <button
