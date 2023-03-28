@@ -6,7 +6,7 @@ import { MdOutlineBookmarkAdd } from "react-icons/md";
 import { GoKebabHorizontal } from "react-icons/go";
 import { PropagateLoader } from "react-spinners";
 import Link from "next/link";
-import Card from "@/components/user/Card.jsx";
+import Card from "@/components/Users/Card.jsx";
 import axios from "axios";
 import Image from "next/image";
 import SideBar from "@/components/Users/Sidebar/SideBar";

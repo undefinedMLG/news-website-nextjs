@@ -5,9 +5,9 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { CardMainNews } from "@/components/user/CardMainNews";
 import { useRouter } from "next/navigation";
 import "../../styles/main-news.css";
+import { CardMainNews } from "@/components/Users/CardMainNews";
 
 const settings = {
   dots: false,
