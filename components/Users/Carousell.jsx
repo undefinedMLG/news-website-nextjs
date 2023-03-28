@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState,useRef } from "react";
 import { BiChevronRight } from "react-icons/bi";
 import axios from "axios";
@@ -6,38 +7,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// const images = [
-//   {
-//     id: 1,
-//     url: "https://picsum.photos/600/400?random=1",
-//     title: "100 mobil Gratis",
-//     description:
-//       "halo inii adalahfoto dengan gambar random yang di ambill dari sumber terpercayadsgasjahshajhdhasdljadldajldbjsbcjbchjsabsbd",
-//   },
-//   {
-//     id: 2,
-//     url: "/image/coba.jpg",
-//     title: "Cahaya Lampu philip 100watt",
-//     description:
-//       "halo inii adalahfoto dengan gambar random yang di ambill dari sumber terpercayadsgasjahshajhdhasdljadldajldbjsbcjbchjsabsbd",
-//   },
-//   {
-//     id: 3,
-//     url: "https://picsum.photos/600/400?random=3",
-//     title: "Bulan puasa jadi progammer",
-//     description:
-//       "halo inii adalahfoto dengan gambar random yang di ambill dari sumber terpercayadsgasjahshajhdhasdljadldajldbjsbcjbchjsabsbd",
-//   },
-// ];
+
 
 const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [datas, setDatas] = useState([]);
 
-  const nextImage = () => {
-    setCurrentIndex(currentIndex === datas.length - 1 ? 0 : currentIndex + 1);
-  };
 
+
+useEffect(()=>{ 
   async function fetchData() {
     try {
       const { data } = await axios.get(
@@ -48,10 +25,9 @@ const Carousel = () => {
       console.log(error);
     }
   }
+  fetchData();
+},[])
 
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const settings = {
     dots: false,

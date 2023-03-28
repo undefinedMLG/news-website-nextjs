@@ -1,4 +1,4 @@
-import SideBar from "@/components/user/Sidebar/SideBar";
+import SideBar from "@/components/Users/Sidebar/SideBar";
 import Tabbing from "@/components/user/Tabbing";
 import React from "react";
 

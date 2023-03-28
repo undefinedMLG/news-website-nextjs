@@ -26,7 +26,7 @@ const SideBar = () => {
   return (
     <div
       className={`w-full left-[61vw] top-16 overflow-hidden hidden md:block ${
-        position < 1539 && path === "/" ? "sticky" : "fixed"
+        position < 1540 && path === "/" ? "sticky" : "fixed"
       }`}
     >
       <div className="max-w-sm border-l-2 px-4 border-dark flex flex-col overflow-y-auto">

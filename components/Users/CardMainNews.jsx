@@ -1,5 +1,6 @@
 import React from "react";
 import Category from "./Category";
+import Image from "next/image";
 
 export const CardMainNews = (props) => {
   return (
@@ -8,12 +9,20 @@ export const CardMainNews = (props) => {
       onClick={props.onClick}
       className="CrdNws bg-[#F8F8F8] h-[350px] w-full cursor-pointer hover:bg-stone-100 duration-200"
     >
-      <img src={props.image} alt="" className="h-[154px] w-full object-cover" />
+      <Image
+        width={100}
+        height={100}
+        src={props.image}
+        alt=""
+        className="h-[154px] w-full object-cover"
+      />
 
       <div className="author flex gap-2 items-center mt-5 px-3 ">
-        <img
+        <Image
           src={props.authorImage}
           alt=""
+          width={200}
+          height={200}
           className="h-10 w-10 object-cover rounded-full"
         />
         <div>

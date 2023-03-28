@@ -6,11 +6,14 @@ import { MdOutlineBookmarkAdd } from "react-icons/md";
 import { useRouter } from "next/navigation";
 
 const Card = (props) => {
-  const item  = props;
-  const router = useRouter()
+  const item = props;
+  const router = useRouter();
 
   return (
-    <div className="mt-5 cursor-pointer hover:bg-zinc-100		 lg:w-9/12" onClick={()=>router.push(`/${item._id}`)}>
+    <div
+      className="mt-5 cursor-pointer hover:bg-zinc-100		 lg:w-9/12"
+      onClick={() => router.push(`/${item._id}`)}
+    >
       <div className="flex md:mt-0">
         <Image
           src={item.author[0].image}
@@ -43,7 +46,9 @@ const Card = (props) => {
           <p className="bg-gray-200 pl-3 pr-3 pt-2 pb-2 rounded-full text-xs">
             {item.category}
           </p>
-          <p className="mt-1.5 ml-3 text-sm text-gray-500">{item.time} min read</p>
+          <p className="mt-1.5 ml-3 text-sm text-gray-500">
+            {item.time} min read
+          </p>
           <p className="font-bold ml-3 mt-1.5 text-gray-400">·</p>
           <p className="mt-1.5 ml-3 text-sm text-gray-500">Selected for you</p>
         </div>

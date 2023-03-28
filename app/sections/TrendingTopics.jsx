@@ -1,13 +1,14 @@
 "use client";
 import CardTrending from "@/components/user/CardTrending";
-import { TrendingCard } from "@/components/user/TrendingCard";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FiTrendingUp } from "react-icons/fi";
 
 export default function TrendingTopics() {
   const [datas, setDatas] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsLoading(true);
@@ -30,22 +31,30 @@ export default function TrendingTopics() {
         </div>
         <h1 className="flex text-[20px]">Trending Topic</h1>
       </div>
-      <div className="grid lg:grid-cols-3 w-full md:grid-cols-2 h-72 max-lg:overflow-y-scroll grid-cols-1">
-        {datas.slice(0, 6).map((item, index) => {
-          return (
-            <div key={index}>
-              <CardTrending
-                index={index + 1}
-                title={item.title}
-                authorName={item.author[0].name}
-                authorImage={item.author[0].image}
-                time={item.time}
-                date={item.date}
-              />
-            </div>
-          );
-        })}
-      </div>
+      {isLoading && (
+        <div className="w-full flex justify-center relative top-12 ">
+          <p>Loading...</p>
+        </div>
+      )}
+      {datas && (
+        <div className="grid lg:grid-cols-3 w-full md:grid-cols-2 h-72 max-lg:overflow-y-scroll grid-cols-1">
+          {datas.slice(0, 6).map((item, index) => {
+            return (
+              <div key={index}>
+                <CardTrending
+                  onClick={() => router.push(`/${item._id}`)}
+                  index={index + 1}
+                  title={item.title}
+                  authorName={item.author[0].name}
+                  authorImage={item.author[0].image}
+                  time={item.time}
+                  date={item.date}
+                />
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import {
   MdOutlineDoNotDisturbOn,
   MdOutlineMoreHoriz,
 } from "react-icons/md";
+import Image from "next/image";
 
 export default function CardAll(props) {
   return (
@@ -14,9 +15,11 @@ export default function CardAll(props) {
       className="border-b w-full border-grey-line py-8 cursor-pointer hover:bg-zinc-100"
     >
       <div className="flex gap-x-2 items-center">
-        <img
+        <Image
           src={props.authorImage}
           alt=""
+          width={100}
+          height={100}
           className="w-10 h-10 rounded-full object-cover"
         />
         <div className="flex gap-x-2 font-poppins">
@@ -39,7 +42,13 @@ export default function CardAll(props) {
           </div>
         </div>
         <div className="w-2/5 flex justify-end">
-          <img src={props.image} alt="" className="w-40 h-auto object-cover" />
+          <Image
+            width={200}
+            height={200}
+            src={props.image}
+            alt=""
+            className="w-40 h-auto object-cover"
+          />
         </div>
       </div>
       <div className="mt-4 w-full flex justify-between items-center">
