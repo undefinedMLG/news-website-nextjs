@@ -1,7 +1,7 @@
 import React from "react";
 import TrendingTopics from "../sections/TrendingTopics";
-import Follow from "@/components/user/Sidebar/Follow";
-import Trussted from "@/components/user/Sidebar/Trusted";
+import Follow from "@/components/user/sidebar/Follow";
+import Trussted from "@/components/user/sidebar/Trusted";
 
 export default function page() {
   return (

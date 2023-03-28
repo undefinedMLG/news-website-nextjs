@@ -1,4 +1,4 @@
-import SideBar from "@/components/user/Sidebar/SideBar";
+import SideBar from "@/components/user/sidebar/SideBar";
 import HeroSection from "./sections/HeroSection";
 import MainNewsSection from "./sections/MainNewsSection";
 import Tabbing from "@/components/user/Tabbing";

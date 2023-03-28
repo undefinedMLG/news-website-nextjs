@@ -9,7 +9,7 @@ import Link from "next/link";
 import Card from "@/components/user/Card.jsx";
 import axios from "axios";
 import Image from "next/image";
-import SideBar from "@/components/user/Sidebar/SideBar";
+import SideBar from "@/components/user/sidebar/SideBar";
 
 export default function Page({ params }) {
   const [datas, setDatas] = useState([]);
@@ -23,7 +23,7 @@ export default function Page({ params }) {
       setIsLoading(true);
       try {
         const { data } = await axios.get(
-          `https://undefinednews.vercel.app/api/v2/news/${ID}`
+          `${process.env.NEXT_PUBLIC_API_URL}/${ID}`
         );
         setDatas(data);
         setTags(data.tags.split(" "));
