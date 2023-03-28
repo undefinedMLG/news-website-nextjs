@@ -4,7 +4,7 @@ export default function CardTrending(props) {
   return (
     <div
       onClick={props.onClick}
-      className="gap-5 w-full flex gap-x-4 font-poppins"
+      className="gap-5 w-full flex gap-x-4 font-poppins cursor-pointer"
     >
       <div className="w-fit text-4xl text-[#DFDFDF] flex items-center ">
         0{props.index}

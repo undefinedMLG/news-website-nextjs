@@ -26,9 +26,7 @@ function MainNewsSection() {
     setIsLoading(true);
     try {
       const fetchData = async () => {
-        const { data } = await axios.get(
-          `https://undefinednews.vercel.app/api/v2/news`
-        );
+        const { data } = await axios.get(process.env.NEXT_PUBLIC_API_URL);
         setData(data);
         setIsLoading(false);
       };
@@ -48,7 +46,7 @@ function MainNewsSection() {
       </div>
       <div className="w-full">
         {isLoading && (
-          <div>
+          <div className="w-full flex justify-center relative top-12 ">
             <p>Loading...</p>
           </div>
         )}
