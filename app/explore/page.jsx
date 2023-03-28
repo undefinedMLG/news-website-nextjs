@@ -1,5 +1,5 @@
-import SideBar from "@/components/User/Sidebar/SideBar";
-import Tabbing from "@/components/User/Tabbing";
+import SideBar from "@/components/user/Sidebar/SideBar";
+import Tabbing from "@/components/user/Tabbing";
 import React from "react";
 
 export default function page() {

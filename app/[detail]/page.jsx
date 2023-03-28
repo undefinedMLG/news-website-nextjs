@@ -6,10 +6,10 @@ import { MdOutlineBookmarkAdd } from "react-icons/md";
 import { GoKebabHorizontal } from "react-icons/go";
 import { PropagateLoader } from "react-spinners";
 import Link from "next/link";
-import Card from "@/components/User/Card.jsx";
+import Card from "@/components/user/Card.jsx";
 import axios from "axios";
 import Image from "next/image";
-import SideBar from "@/components/User/Sidebar/SideBar";
+import SideBar from "@/components/user/Sidebar/SideBar";
 
 export default function Page({ params }) {
   const [datas, setDatas] = useState([]);
@@ -68,7 +68,7 @@ export default function Page({ params }) {
                         src={datas.author[0].image}
                         width={50}
                         height={50}
-                        alt="User"
+                        alt="user"
                         className="rounded-full object-cover w-12 h-12"
                       />
                     </div>

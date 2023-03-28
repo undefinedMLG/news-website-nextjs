@@ -1,7 +1,7 @@
-import SideBar from "@/components/User/Sidebar/SideBar";
+import SideBar from "@/components/user/Sidebar/SideBar";
 import HeroSection from "./sections/HeroSection";
 import MainNewsSection from "./sections/MainNewsSection";
-import Tabbing from "@/components/User/Tabbing";
+import Tabbing from "@/components/user/Tabbing";
 import TrendingTopics from "./sections/TrendingTopics";
 
 export default function page() {

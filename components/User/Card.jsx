@@ -19,7 +19,7 @@ const Card = (props) => {
           src={item.author[0].image}
           width={50}
           height={50}
-          alt="User"
+          alt="user"
           className="rounded-full"
         />
         <h1 className="font-semibold ml-3 mt-3">{item.author[0].name}</h1>
