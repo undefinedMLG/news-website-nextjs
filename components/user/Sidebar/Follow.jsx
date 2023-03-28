@@ -1,8 +1,8 @@
 "use client";
-import { IoMdClose } from "react-icons/Io";
 import React, { useState, useEffect } from "react";
 import ReactModal from "react-modal";
 import Image from "next/image";
+import { IoMdClose } from "react-icons/io";
 
 export default function Follow() {
   const [data, setData] = useState([]);

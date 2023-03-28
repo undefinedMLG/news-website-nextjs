@@ -3,7 +3,7 @@ import { BsFillPatchCheckFill } from "react-icons/bs";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import ReactModal from "react-modal";
-import { IoMdClose } from "react-icons/Io";
+import { IoMdClose } from "react-icons/io";
 import Image from "next/image";
 
 export default function Trussted() {
