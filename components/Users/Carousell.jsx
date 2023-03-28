@@ -6,12 +6,13 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useRouter } from "next/navigation";
 
 
 
 const Carousel = () => {
   const [datas, setDatas] = useState([]);
-
+  const router =useRouter()
 
 
 useEffect(()=>{ 
@@ -41,7 +42,7 @@ useEffect(()=>{
   const next = () => sliderRef.current.slickNext();
   return (
     <div className="flex justify-center items-center">
-      <div className=" max-w-2xl w-[437px] relative">
+      <div className="  max-w-2xl w-[437px] relative">
         <Slider {...settings} className="" ref={sliderRef}>
           {datas.map((item, index) => (
             <>
@@ -49,22 +50,25 @@ useEffect(()=>{
                 className="relative  border-2 border-black object-cover "
                 key={index}
               >
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
-                  className=" h-[235px] w-[437px] object-cover"
+                  width={235}
+                  height={437}
+                  className=" h-[235px] w-[437px] object-cover cursor-pointer"
+                  onClick={() => router.push(`/${item._id}`)}
                 />
               </div>
-              <h1 className="text-2xl font-[poppins] font-semibold truncate mt-4">
+              <h1 className="text-2xl font-[poppins] font-semibold truncate mt-4 hidden lg:block">
                 {item.title}
               </h1>
-              <p className="truncate">{item.author[0].desc.slice(0, 50)}</p>
+              <p className="truncate hidden lg:block">{item.author[0].desc.slice(0, 50)}</p>
             </>
           ))}
         </Slider>
                 <button
                   onClick={next}
-                  className="absolute right-5 top-[40%] transform -translate-y-1/2 bg-black text-white px-3 py-3 text-4xl font-bold rounded-full focus:outline-none -mr-8 border-2 border-white"
+                  className="absolute right-5 top-1/2 lg:top-[40%] transform -translate-y-1/2 bg-black text-white px-3 py-3 text-4xl font-bold rounded-full focus:outline-none -mr-8 border-2 border-white"
                 >
                   <BiChevronRight />
                 </button>
