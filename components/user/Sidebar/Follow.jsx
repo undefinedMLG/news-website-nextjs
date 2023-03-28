@@ -25,7 +25,6 @@ export default function Follow() {
     getData();
   }, []);
 
- 
   return (
     <div className="flex flex-col w-full">
       <h1 className="font-[poppins] font-medium text-black mb-6 mt-8 capitalize text-2xl">
@@ -42,13 +41,13 @@ export default function Follow() {
               <img
                 src={Follow.imagehuman}
                 alt=""
-                className="h-8 w-8 rounded-full"
+                className="h-8 w-8 rounded-full object-cover"
               />
               <div className=" max-w-[160px]   ">
-                <h1 className="text-md font-medium mb-1.5 font-[poppins] text-black">
+                <h1 className="text-sm font-semibold mb-1.5 font-poppins text-black">
                   {Follow.name}
                 </h1>
-                <p className="text-black h-10 overflow-clip  text-sm font-[poppins] ">
+                <p className="text-dark h-10 overflow-clip text-sm font-poppins ">
                   {Follow.tittle}
                 </p>
               </div>
@@ -66,7 +65,7 @@ export default function Follow() {
 
       <button
         onClick={openModal}
-        className="text-sm font-medium mt-2 flex justify-start font-[poppins]"
+        className="text-sm text-primary hover:underline font-medium mt-2 flex justify-start font-[poppins]"
       >
         See More Suggestion
       </button>

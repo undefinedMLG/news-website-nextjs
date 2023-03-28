@@ -1,11 +1,12 @@
 import React from "react";
+import Category from "./Category";
 
 export const CardMainNews = (props) => {
   return (
     <div
       key={props.key}
       onClick={props.onClick}
-      className="CrdNws bg-gray-100 h-[350px] w-full cursor-pointer hover:bg-gray-200 duration-200"
+      className="CrdNws bg-[#F8F8F8] h-[350px] w-full cursor-pointer hover:bg-stone-100 duration-200"
     >
       <img src={props.image} alt="" className="h-[154px] w-full object-cover" />
 
@@ -24,9 +25,7 @@ export const CardMainNews = (props) => {
         {props.title}
       </h1>
       <div className="flex gap-4  text-sm mt-7 px-3">
-        <h1 className="category bg-gray-200 px-2 pb-1 rounded-full">
-          {props.category}
-        </h1>
+        <Category category={props.category} />
         <p className="text-gray-500 ">{props.time} min read</p>
       </div>
     </div>

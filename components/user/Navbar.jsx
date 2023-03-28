@@ -7,8 +7,6 @@ const Navbar = () => {
   const [position, setScrollPosition] = useState(false);
   const path = usePathname();
 
-  console.log(path);
-
   useEffect(() => {
     function handleScroll() {
       const position = window.pageYOffset;
@@ -36,7 +34,7 @@ const Navbar = () => {
       </div>
 
       <div className=" flex gap-8 font-medium items-center max-md:mb-3 justify-end max-md:justify-between w-full  ">
-        <div className="flex gap-8 font-poppins max-md:-mt-10 ">
+        <div className="flex gap-8 text-sm font-medium font-poppins max-md:-mt-10 ">
           <Link href={"/"}>Home</Link>
           <Link href={"/explore"}>Explore</Link>
           <Link href={"/write"}>Write</Link>

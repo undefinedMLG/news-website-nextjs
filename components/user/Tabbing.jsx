@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
 import CardAll from "./CardAll";
-
+import { usePathname, useRouter } from "next/navigation";
+import { IoSearch } from "react-icons/io5";
 const settings = {
   dots: false,
   slidesToShow: 6,
@@ -47,13 +48,16 @@ export default function Tabbing() {
   const [category, setCategory] = useState("For You");
   const [datas, setDatas] = useState([]);
   const [isLoading, setIsLoading] = useState("");
+  const [search, setSearch] = useState("");
+  const router = useRouter();
+  const path = usePathname();
 
   useEffect(() => {
     setIsLoading(true);
     try {
       const fetchDatas = async () => {
         const { data } = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/?category=${category}`
+          `${process.env.NEXT_PUBLIC_API_URL}/?category=${category}&search=${search}`
         );
         setDatas(data);
         setIsLoading(false);
@@ -62,14 +66,30 @@ export default function Tabbing() {
     } catch (error) {
       console.log(error);
     }
-  }, [category]);
+  }, [category, search]);
 
   const handleClick = (event) => {
     setCategory(event);
   };
 
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
   return (
-    <div className="w-full lg:w-3/5">
+    <div className="w-full lg:w-3/5 pt-6">
+      <div
+        className={`bg-[#F8F8F8] flex items-center h-12 px-4 rounded-full mb-2 w-fit ${
+          path !== "/" ? "block" : "hidden"
+        }`}
+      >
+        <IoSearch className="text-3xl text-grey-text" />
+        <input
+          type="text"
+          className="bg-[#F8F8F8] focus:outline-none px-4"
+          onChange={(event) => handleSearch(event)}
+        />
+      </div>
       <Slider {...settings} className="">
         {categoryOptions.map((item, index) => {
           return (
@@ -98,10 +118,12 @@ export default function Tabbing() {
           </div>
         )}
         {datas && (
-          <div className="max-w-[90%] mx-auto">
+          <div className="card-wrapper">
             {datas.map((item) => {
               return (
                 <CardAll
+                  key={item._id}
+                  onClick={() => router.push(item._id)}
                   authorImage={item.author[0].image}
                   authorName={item.author[0].name}
                   date={item.date}
@@ -109,6 +131,7 @@ export default function Tabbing() {
                   image={item.image}
                   category={item.category}
                   time={item.time}
+                  desc={item.author[0].desc}
                 />
               );
             })}
