@@ -22,10 +22,9 @@ const SideBar = () => {
     };
   }, []);
 
-  console.log(position);
   return (
     <div
-      className={`w-full left-[61vw] top-16 overflow-hidden hidden md:block ${
+      className={`w-full left-[61vw] top-16 overflow-hidden hidden lg:block ${
         position < 1540 && path === "/" ? "sticky" : "fixed"
       }`}
     >

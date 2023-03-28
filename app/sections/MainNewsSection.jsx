@@ -15,9 +15,32 @@ import "../../styles/main-news.css";
 const settings = {
   dots: false,
   infinite: true,
-  speed: 500,
   slidesToShow: 4,
-  slidesToScroll: 3,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1280,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 4,
+        dots: false,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 640,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 function MainNewsSection() {
@@ -43,7 +66,7 @@ function MainNewsSection() {
   const next = () => sliderRef.current.slickNext();
 
   return (
-    <div className="py-10 max-w-[80%] mx-auto text-black w-full">
+    <div className="py-20 max-w-[80%] mx-auto text-black w-full">
       <div className="flex gap-2 items-center mb-8 text-black ">
         <p className=" ring-2 p-1.5 rounded-full text-xl ring-black">
           <ImNewspaper />

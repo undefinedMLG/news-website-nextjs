@@ -7,7 +7,7 @@ export const CardMainNews = (props) => {
     <div
       key={props.key}
       onClick={props.onClick}
-      className="CrdNws bg-[#F8F8F8] h-[350px] w-full cursor-pointer hover:bg-stone-100 duration-200"
+      className="min-h-[20rem] bg-[#F8F8F8] w-full cursor-pointer hover:bg-stone-100 duration-200"
     >
       <Image
         width={100}

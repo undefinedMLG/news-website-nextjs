@@ -57,7 +57,7 @@ export default function Page({ params }) {
           </div>
         </div>
       ) : (
-        <div className=" md:mt-12 max-md:pt-24 mt-0 ml-3 lg:ml-24 md:mt-0 md:ml-3 flex flex-col md:flex-row lg:max-w-[70%]">
+        <div className="relative top-20 max-md:pt-24 mt-0 ml-3 lg:ml-24 md:mt-0 md:ml-3 flex flex-col md:flex-row lg:max-w-[70%]">
           <div className=" mt-0 lg:mt-24">
             <div className="flex flex-col md:mr-3 lg:mr-20 lg:w-9/12 md:flex-row md:justify-between">
               <div className="flex">
