@@ -1,9 +1,11 @@
-import React, { use } from "react";
+
 import Link from "next/link";
 import Navbar from "./Navbar";
 import Carousell from "./Carousell";
 
+
 export default function Landing() {
+  
   return (
     <>
       <Navbar />

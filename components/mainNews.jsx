@@ -24,7 +24,7 @@ function CarousellNews() {
     }
   }, []);
 
-  console.log(data);
+ 
 
   return (
     <div className="py-10 px-20 text-black">
